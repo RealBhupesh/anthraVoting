@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { Vote, Shield, Zap, CheckCircle2, ArrowRight, Play } from 'lucide-react';
+import Link from 'next/link';
 import CountUp from 'react-countup';
 import { useState } from 'react';
 
@@ -119,7 +120,8 @@ export default function Hero() {
               transition={{ delay: 0.6 }}
               className="flex flex-col sm:flex-row gap-4 justify-center items-center"
             >
-              <button
+              <Link
+                href="/admin/elections/create"
                 className="group relative bg-gradient-to-r from-success-green-600 to-success-green-500 text-white font-bold px-8 py-4 rounded-xl shadow-2xl transition-all duration-300 hover:shadow-success-green-500/50 hover:scale-105 flex items-center gap-2"
                 onMouseEnter={() => setIsHovered(true)}
                 onMouseLeave={() => setIsHovered(false)}
@@ -130,12 +132,12 @@ export default function Hero() {
 
                 {/* Pulse animation */}
                 <span className="absolute inset-0 rounded-xl bg-white/20 animate-ping opacity-75" />
-              </button>
+              </Link>
 
-              <button className="group bg-white/10 backdrop-blur-sm border-2 border-white/30 text-white font-semibold px-8 py-4 rounded-xl transition-all duration-300 hover:bg-white/20 hover:border-white/50 flex items-center gap-2">
+              <Link href="#demo" className="group bg-white/10 backdrop-blur-sm border-2 border-white/30 text-white font-semibold px-8 py-4 rounded-xl transition-all duration-300 hover:bg-white/20 hover:border-white/50 flex items-center gap-2">
                 <Play className="w-5 h-5" />
                 Watch Demo
-              </button>
+              </Link>
             </motion.div>
           </motion.div>
 

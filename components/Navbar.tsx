@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { Vote, Menu, X } from 'lucide-react';
+import Link from 'next/link';
 import { useState } from 'react';
 
 const navLinks = [
@@ -9,6 +10,7 @@ const navLinks = [
   { name: 'How It Works', href: '#how-it-works' },
   { name: 'Pricing', href: '#pricing' },
   { name: 'Demo', href: '#demo' },
+  { name: 'Admin', href: '/admin' },
 ];
 
 export default function Navbar() {
@@ -48,12 +50,12 @@ export default function Navbar() {
 
           {/* CTA buttons */}
           <div className="hidden md:flex items-center gap-4">
-            <button className="text-slate-700 hover:text-trust-blue-600 font-medium transition-colors">
+            <Link href="/admin" className="text-slate-700 hover:text-trust-blue-600 font-medium transition-colors">
               Sign In
-            </button>
-            <button className="bg-gradient-to-r from-trust-blue-600 to-trust-blue-500 text-white font-semibold px-6 py-2 rounded-lg shadow-lg hover:shadow-xl transition-all hover:scale-105">
+            </Link>
+            <Link href="/admin" className="bg-gradient-to-r from-trust-blue-600 to-trust-blue-500 text-white font-semibold px-6 py-2 rounded-lg shadow-lg hover:shadow-xl transition-all hover:scale-105">
               Get Started
-            </button>
+            </Link>
           </div>
 
           {/* Mobile menu button */}
@@ -89,12 +91,12 @@ export default function Navbar() {
                 </a>
               ))}
               <div className="flex flex-col gap-2 pt-4 border-t border-slate-200">
-                <button className="text-slate-700 hover:text-trust-blue-600 font-medium transition-colors text-left">
+                <Link href="/admin" className="text-slate-700 hover:text-trust-blue-600 font-medium transition-colors text-left">
                   Sign In
-                </button>
-                <button className="bg-gradient-to-r from-trust-blue-600 to-trust-blue-500 text-white font-semibold px-6 py-2 rounded-lg shadow-lg">
+                </Link>
+                <Link href="/admin" className="bg-gradient-to-r from-trust-blue-600 to-trust-blue-500 text-white font-semibold px-6 py-2 rounded-lg shadow-lg text-center">
                   Get Started
-                </button>
+                </Link>
               </div>
             </div>
           </motion.div>
